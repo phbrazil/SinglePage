@@ -10,6 +10,7 @@ function addTarefa() {
     if (nome != '' && data != '') {
         document.getElementById("add").innerHTML = "Nova tarefa " + nome + " Adicionada!";
         document.getElementById("dados").innerHTML = addLista(status, nome, data, lista);
+        //addLista(status, nome, data, lista);
     } else {
         alert("Favor informar os dados");
     }
