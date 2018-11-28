@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Single Page Materia Desenvolvimento Mobile (Professor Ramon)</title>
+        <meta name="description" content="">
+        <!-- Bootstrap core CSS -->
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+    </head>
+    <body>
+        <div align="center">
+            <h4 class="text-muted">Single Page Materia Desenvolvimento Mobile (Professor Ramon)</h4>
+            <br>
+
+            <h4 class='text-muted'>Adicionar Tarefas</h4>
+            <div align='center'>
+                <div class="col-md-6 order-md-1">
+                    <div class="row">
+                        <div class="col-md-7 mb-3">
+                            <label>Nome da Tarefa</label>
+                            <input name="nome" autocomplete="off" type="text" class="form-control" id="nome" required>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label >Prazo</label>
+                            <input name = "data" type="date" class="form-control" id="data" maxlength="10" required>
+                            <div class="invalid-feedback">
+                                Data necessária
+                            </div>
+                        </div>
+                        <table id ='dados'>
+                            <tr>
+                                <td></td>
+
+                            </tr>
+
+
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <button id="add" class="btn-sm btn-outline-danger"><a href="index.html" style='text-decoration: none'>Cancelar</a></button>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <button id="add" class="btn-sm btn-outline-primary" onclick="addTarefa()">Nova Tarefa</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script>
+
+        function addTarefa() {
+            this._STORAGE_NAME = 'todo';
+            
+            var nome = document.getElementById('nome').value;
+            var data = document.getElementById('data').value;
+
+            let lista = JSON.parse(localStorage.getItem(this._STORAGE_NAME));
+
+            if (nome != '' && data != '') {
+                document.getElementById("dados").innerHTML = addLista(nome, data, lista);
+            } else {
+                alert("Favor informar os dados");
+            }
+            
+            console.log(lista.length);
+
+
+        }
+
+    </script>
+
+    <script>
+
+        var tarefa = ["Saab", "Volvo", "BMW"];
+        document.getElementById("tarefa").innerHTML = tarefa;
+
+    </script>
+
+
+
+
+    <script src="js/listaTarefas.js"></script>
+    <script src="js/carregarLista.js"></script>
+</html>

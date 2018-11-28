@@ -13,9 +13,8 @@
     </head>
     <body>
         <div align="center">
-
             <h4 class="text-muted">Single Page Materia Desenvolvimento Mobile (Professor Ramon)</h4>
-
+            <br>
             <div class="row">
                 <div class="col-md-4 mb-3">
                     <p><strong>Lista de tarefas</strong></p>
@@ -25,11 +24,40 @@
                     <input type="checkbox" id="terminadas">
                 </div>
                 <div class="col-md-4 mb-3">
-                    <label><strong>Mostrar Terminadas</strong></label>
                     <input type="button" id="remover" value="Remover Terminada" class="btn-sm btn-outline-danger">
                 </div>
             </div>
+            <div align="center">
+                <table id ='lista'>
+                    <tr class='table-bordered'>
+                        <td align = "center">Terminada</td>
+                        <td align = "center">Tarefa</td>
+                        <td align = "center">Prazo</td>
+                    </tr>                    
+                    <tr id = 'linha'>
+                        <td id='terminada'></td>
+                        <td id = 'tarefa'></td>
+                        <td id = 'prazo'></td>
+                    </tr>
+                </table>
+
+
+            </div>
+            <div align='left'>
+                <div class="col-md-4 mb-3">
+                    <button id="add" value="Adicionar Tarefa"class="btn-sm btn-outline-info"><a style='text-decoration: none' href="novaTarefa.html">Nova Tarefa</a></button>
+                </div>
+            </div>
+
+
         </div>
+
+        <script>
+
+            var tarefa = ["Saab", "Volvo", "BMW"];
+            document.getElementById("tarefa").innerHTML = tarefa;
+
+        </script>
 
 
 
