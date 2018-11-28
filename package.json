@@ -1,5 +1,5 @@
 {
-  "name": "spa-github-pages",
+  "name": "SinglePages",
   "version": "5.1.0",
   "private": true,
   "description": "Single Page Apps for GitHub Pages",
@@ -9,9 +9,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rafrex/spa-github-pages.git"
+    "url": "git+https://github.com/phbrazil/SinglePage.git"
   },
-  "author": "Rafael Pedicini <code@rafrex.com>",
+  "author": "Paulo Bezerra>",
   "license": "MIT",
   "dependencies": {
     "prop-types": "^15.6.0",
