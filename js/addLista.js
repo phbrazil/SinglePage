@@ -7,18 +7,12 @@ function addLista(status, nome, data) {
 
     if (lista === null) {
         lista = [];
-        lista.push({"status": status});
-        lista.push({"nome": nome});
-        lista.push({"data": data});
+        lista.push([{"status": status}, {"nome": nome}, {"data": data}]);
         localStorage.setItem(this._STORAGE_NAME, JSON.stringify(lista));
-        console.log(lista.length);
         return lista;
 
     } else {
-        lista.push({"status": status});
-        lista.push({"nome": nome});
-        lista.push({"data": data});
-        console.log(lista[0].nome);
+        lista.push([{"status": status}, {"nome": nome}, {"data": data}]);
         localStorage.setItem(this._STORAGE_NAME, JSON.stringify(lista));
         return lista;
     }

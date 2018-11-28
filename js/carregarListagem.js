@@ -6,6 +6,6 @@ function carregarListagem() {
     if (lista === null) {
         alert("Lista Vazia");
     } else {
-        return lista
+        return lista;
     }
 }
