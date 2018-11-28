@@ -54,10 +54,14 @@
 
         <script>
             window.onload = function () {
-                this._STORAGE_NAME = 'todo';
 
-                let lista = JSON.parse(localStorage.getItem(this._STORAGE_NAME));
-                document.getElementById("dados").innerHTML = lista;
+
+                var lista = carregarListagem();
+
+                //document.getElementById("dados").innerHTML = lista;
+                
+                document.getElementById("tarefa").innerHTML = lista[40].nome;
+                document.getElementById("prazo").innerHTML = lista[41].data;
 
 
             }
