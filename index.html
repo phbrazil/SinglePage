@@ -24,22 +24,43 @@
                     <input type="checkbox" id="terminadas">
                 </div>
                 <div class="col-md-4 mb-3">
-                    <input type="button" id="remover" value="Remover Terminada" class="btn-sm btn-outline-danger">
+                    <input type="button" id="remover" onclick="removerTudo()" value="Remover Tudo" class="btn-sm btn-outline-danger">
                 </div>
             </div>
             <div align="center">
-                <table id ='lista'>
-                    <tr class='table-bordered'>
-                        <td align = "center">Terminada</td>
-                        <td align = "center">Tarefa</td>
-                        <td align = "center">Prazo</td>
-                    </tr>                    
-                    <tr id = 'dados'>
-                        <td id='status'></td>
-                        <td id = 'tarefa'></td>
-                        <td id = 'prazo'></td>
-                    </tr>
+
+                <table id="myTable" cellpadding="2" cellspacing="2" border="1">
+                    
                 </table>
+                <script>
+
+                    window.onload = function () {
+
+
+                        var lista = carregarListagem();
+
+                        //document.getElementById("dados").innerHTML = lista;
+                        if (lista != null) {
+
+                            for (var j = 0; j < lista.length; j++) {
+                                var table = document.getElementById("myTable");
+                                var row = table.insertRow(j);
+                                var cell1 = row.insertCell(0);
+                                var cell2 = row.insertCell(1);
+                                var cell3 = row.insertCell(2);
+
+                                cell1.innerHTML = lista[j].status,
+                                        cell2.innerHTML = lista[j+1].nome,
+                                        cell3.innerHTML = lista[j+2].data;
+
+                            }
+
+                        }
+
+                    }
+
+                </script>
+
 
 
             </div>
@@ -53,26 +74,15 @@
         </div>
 
         <script>
-            window.onload = function () {
 
-
-                var lista = carregarListagem();
-
-                //document.getElementById("dados").innerHTML = lista;
-                if (lista != null) {
-                    document.getElementById("status").innerHTML = lista[0].status;
-                    document.getElementById("tarefa").innerHTML = lista[1].nome;
-                    document.getElementById("prazo").innerHTML = lista[2].data;
-                }
-
-            }
 
 
         </script>
 
 
-        <script src="js/listaTarefas.js"></script>
-        <script src="js/carregarLista.js"></script>
+        <script src="js/addLista.js"></script>
+        <script src="js/carregarListagem.js"></script>
         <script src="js/addTarefa.js"></script>
+        <script src="js/removerTudo.js"></script>
     </body>
 </html>
