@@ -34,7 +34,7 @@
                         <td align = "center">Tarefa</td>
                         <td align = "center">Prazo</td>
                     </tr>                    
-                    <tr id = 'linha'>
+                    <tr id = 'dados'>
                         <td id='terminada'></td>
                         <td id = 'tarefa'></td>
                         <td id = 'prazo'></td>
@@ -53,15 +53,21 @@
         </div>
 
         <script>
+            window.onload = function () {
+                this._STORAGE_NAME = 'todo';
 
-            var tarefa = ["Saab", "Volvo", "BMW"];
-            document.getElementById("tarefa").innerHTML = tarefa;
+                let lista = JSON.parse(localStorage.getItem(this._STORAGE_NAME));
+                document.getElementById("dados").innerHTML = lista;
+
+
+            }
+
 
         </script>
 
 
-
-
-        <script src="/build/bundle.js"></script>
+        <script src="js/listaTarefas.js"></script>
+        <script src="js/carregarLista.js"></script>
+        <script src="js/addTarefa.js"></script>
     </body>
 </html>

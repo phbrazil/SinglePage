@@ -31,14 +31,8 @@
                                 Data necessária
                             </div>
                         </div>
-                        <table id ='dados'>
-                            <tr>
-                                <td></td>
-
-                            </tr>
-
-
-                        </table>
+                        <label id='add' style='border: none; color: blue'></label>
+                        <br>
                     </div>
                     <div class="row">
                         <div class="col-md-4 mb-3">
@@ -54,39 +48,7 @@
         </div>
     </body>
 
-    <script>
-
-        function addTarefa() {
-            this._STORAGE_NAME = 'todo';
-            
-            var nome = document.getElementById('nome').value;
-            var data = document.getElementById('data').value;
-
-            let lista = JSON.parse(localStorage.getItem(this._STORAGE_NAME));
-
-            if (nome != '' && data != '') {
-                document.getElementById("dados").innerHTML = addLista(nome, data, lista);
-            } else {
-                alert("Favor informar os dados");
-            }
-            
-            console.log(lista.length);
-
-
-        }
-
-    </script>
-
-    <script>
-
-        var tarefa = ["Saab", "Volvo", "BMW"];
-        document.getElementById("tarefa").innerHTML = tarefa;
-
-    </script>
-
-
-
-
     <script src="js/listaTarefas.js"></script>
     <script src="js/carregarLista.js"></script>
+    <script src="js/addTarefa.js"></script>
 </html>
