@@ -10,6 +10,7 @@ window.onload = function () {
 
     if (lista !== null) {
 
+
         for (var j = 0; j < tamanho; j++) {
             var table = document.getElementById("myTable");
 
