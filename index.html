@@ -20,7 +20,7 @@
     <body>
         <div align="center">
             <br>
-            <h4 class="text-muted">Single Page Materia Desenvolvimento Mobile (Professor Ramon)</h4>
+            <h4 class="text-muted">Single Page Matéria Desenvolvimento Mobile (Professor Ramon)</h4>
             <br>
             <div class="row">
                 <div class="col-md-4 mb-3">
@@ -32,6 +32,9 @@
                 </div>
                 <div class="col-md-4 mb-3">
                     <input type="button" id="remover" onclick="removerTudo()" value="Remover Tudo" class="btn-sm btn-outline-danger">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <input type="button" id="offline" onclick="Offline()" value="Modo Offline" class="btn-sm btn-outline-secondary">
                 </div>
             </div>
             <div align="center">
@@ -57,6 +60,26 @@
 
         <script>
 
+            function Offline() {
+
+                var answer = confirm("Deseja usar a página em modo Offline?");
+
+                if (answer === true) {
+
+                    document.querySelector('.cache-article').addEventListener('click', async (event) => {
+                        event.preventDefault();
+
+                        const id = this.dataset.articleId;
+                        const cache = await caches.open('mysite-article-' + id);
+                        const response = await fetch('/get-article-urls?id=' + id);
+                        const urls = await response.json();
+                        await cache.addAll(urls);
+                    });
+                } else {
+                    return false;
+                }
+
+            };
 
 
         </script>
